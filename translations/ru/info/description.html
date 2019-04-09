@@ -1,0 +1,68 @@
+<p>
+  В этой миссии Ваша задача состоит в том, чтобы урезать предложение до длины, которая не превышает 
+  заданное количество символов.
+</p>
+
+<p>
+  Если данное предложение уже достаточно короткое, Вам не нужно ничего с ним делать.
+  В случае, если его нужно урезать, отсутствующая часть должна быть обозначена присоединением многоточия
+  ("...") к концу сокращенного предложения.
+</p>
+
+<p>
+  Сокращенное предложение может содержать целые слова и пробелы.<br>
+  Оно не должно содержать ни усеченных слов, ни конечных пробелов.<br>
+  Многоточие было учтено при расчете разрешенного количества символов, поэтому оно
+  не засчитывается в счет заданной длины.
+</p>
+
+<p>
+  <strong>Входные данные:</strong> Два аргумента:
+  <ul>
+    <li>однострочное предложение в виде строка</li>
+    <li>максимальная длина усеченного предложения в виду int</li>
+  </ul>
+</p>
+
+<p>
+  <strong>Выходные данные:</strong> Урезанное предложение с многоточием (если требуется) в виде
+   одной строки.
+</p>
+
+<div class="for_info_only">
+  <p>
+      <strong>Примеры:</strong>
+  </p>
+{% if interpreter.slug == "js-node" %}
+  <pre class="brush: python">
+cutSentence("Hi my name is Alex", 4) == "Hi..."
+cutSentence("Hi my name is Alex", 8) == "Hi my..."
+cutSentence("Hi my name is Alex", 18) == "Hi my name is Alex"
+cutSentence("Hi my name is Alex", 20) == "Hi my name is Alex"</pre>
+{% else %}
+  <pre class="brush: python">
+cut_sentence("Hi my name is Alex", 4) == "Hi..."
+cut_sentence("Hi my name is Alex", 8) == "Hi my..."
+cut_sentence("Hi my name is Alex", 18) == "Hi my name is Alex"
+cut_sentence("Hi my name is Alex", 20) == "Hi my name is Alex"</pre>
+{% endif %}
+</div>
+
+<p>
+  <strong>Предварительное условие:</strong><br>
+  {% if interpreter.slug == "js-node" %}
+  <ul>
+    <li>line.startsWith(' ') === false</li>
+    <li>0 < line.length ≤ 79</li>
+    <li>0 < length ≤ 76</li>
+    <li>все символы в строке - английские буквы и / или пробелы</li>
+  </ul>
+  {% else %}
+  <ul>
+    <li>line.startswith(' ') == False</li>
+    <li>0 < len(line) ≤ 79</li>
+    <li>0 < length ≤ 76</li>
+    <li>all(char in string.ascii_letters + ' ' for char in line)</li>
+  </ul>
+  {% endif %}
+</p>
