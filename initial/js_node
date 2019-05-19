@@ -1,19 +1,16 @@
-"use strict";
 
-function cutSentence(line, length) {
-    // cut a given sentence, so it becomes shorter than or equal to a given length
-
+export function cutSentence(line: string, length: number): string {
     // your code here
-
     return ''
 }
 
-var assert = require('assert');
+import * as assert from 'assert';
 
-if (!global.is_checking) {
-    assert.equal(cutSentence("Hi my name is Alex", 4), "Hi...", "First")
-    assert.equal(cutSentence("Hi my name is Alex", 8), "Hi my...", "Second")
-    assert.equal(cutSentence("Hi my name is Alex", 18), "Hi my name is Alex", "Third")
-    assert.equal(cutSentence("Hi my name is Alex", 20), "Hi my name is Alex", "Fourth")
-    console.log("Done! Do you like it? Go Check it!");
-}
+console.log('Example:')
+console.log(cutSentence("Hi my name is Alex", 4))
+
+assert.equal(cutSentence("Hi my name is Alex", 4), "Hi...")
+assert.equal(cutSentence("Hi my name is Alex", 8), "Hi my...")
+assert.equal(cutSentence("Hi my name is Alex", 18), "Hi my name is Alex")
+assert.equal(cutSentence("Hi my name is Alex", 20), "Hi my name is Alex")
+console.log("Done! Do you like it? Go Check it!");
